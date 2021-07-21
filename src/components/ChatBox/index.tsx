@@ -225,7 +225,7 @@ const ChatBox: FC<ChatProps> = ({
   const hanldeSubmitByKeyPress = ( event: React.KeyboardEvent ) => {
     if (
       (event.ctrlKey || event.metaKey) &&
-      (event.code === "13" || event.code === "10")
+      (event.keyCode === 13 || event.keyCode === 10)
     ) {
       handleSubmit();
     }
