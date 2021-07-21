@@ -1,7 +1,7 @@
 {
-  "name": "extrawest-firebase-chat-component",
+  "name": "extrawest-firebase-chat-list-component",
   "version": "1.0.0",
-  "description": "React Firebase Chat component",
+  "description": "React Firebase Chat List Component",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "types": "./lib/esm/index.d.ts",
@@ -15,8 +15,10 @@
     "lint": "eslint"
   },
   "keywords": [
-    "Chat",
-    "Firebase",
+    "chat wrapper",
+    "chat",
+    "firebase chat",
+    "firebase",
     "Extrawest"
   ],
   "author": "Extrawest",
@@ -35,6 +37,7 @@
     "@types/react-scroll": "^1.8.2",
     "firebase": "^8.6.8",
     "react-scripts-ts": "^3.1.0",
+    "eslint": "^7.29.0",
     "typescript": "^4.2.4"
   },
   "dependencies": {
@@ -42,7 +45,6 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.58",
     "dayjs": "^1.10.4",
-    "eslint": "^7.29.0",
     "final-form": "^4.20.2",
     "ios-inner-height": "^1.1.1",
     "react-device-detect": "^1.17.0",
