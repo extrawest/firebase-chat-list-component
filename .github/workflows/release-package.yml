@@ -21,4 +21,4 @@ jobs:
       - run: npm ci
       - uses: JS-DevTools/npm-publish@v1
         with:
-          token: ${{ secrets.NPM_AUH_TOKEN }}
+          token: ${{ secrets.NPM_TOKEN }}
