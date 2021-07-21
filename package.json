@@ -9,7 +9,6 @@
     "/lib/**/*"
   ],
   "scripts": {
-    "prepublish": "npm run build",
     "build": "npm run build:esm && npm run build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir lib/cjs",
@@ -25,7 +24,7 @@
   "author": "Extrawest",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/extrawest/firebase-chat-component.git"
+    "url": "git+https://github.com/extrawest/firebase-chat-list-component.git"
   },
   "license": "ISC",
   "peerDependencies": {
@@ -54,9 +53,9 @@
     "react-scroll": "^1.8.2"
   },
   "bugs": {
-    "url": "https://github.com/extrawest/firebase-chat-component/issues"
+    "url": "https://github.com/extrawest/firebase-chat-list-component/issues"
   },
-  "homepage": "https://github.com/extrawest/firebase-chat-component#readme",
+  "homepage": "https://github.com/extrawest/firebase-chat-list-component#readme",
   "directories": {
     "lib": "lib"
   },
