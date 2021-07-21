@@ -1,6 +1,6 @@
 {
-  "name": "extrawest-firebase-chat-list-component",
-  "version": "1.0.0",
+  "name": "@extrawest/firebase-chat-list-component",
+  "version": "1.0.1",
   "description": "React Firebase Chat List Component",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
@@ -9,6 +9,7 @@
     "/lib/**/*"
   ],
   "scripts": {
+    "prepublish": "npm run build",
     "build": "npm run build:esm && npm run build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir lib/cjs",
@@ -51,5 +52,12 @@
     "react-final-form": "^6.5.3",
     "react-final-form-hooks": "^2.0.2",
     "react-scroll": "^1.8.2"
+  },
+  "bugs": {
+    "url": "https://github.com/extrawest/firebase-chat-component/issues"
+  },
+  "homepage": "https://github.com/extrawest/firebase-chat-component#readme",
+  "directories": {
+    "lib": "lib"
   }
 }
