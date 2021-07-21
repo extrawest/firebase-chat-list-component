@@ -49,6 +49,24 @@ import ChatBox from "extrawest-firebase-chat-list-component";
 
 ```
 
+## Firebase Database rules
+
+Before using chat, you need to configure firebase application and rules for Realtime Database
+
+```
+{
+  "rules": {
+    "chats": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      "$messageId": {
+       ".validate": "newData.hasChildren(['message', 'timestamp', 'author']) && newData.child('message').isString() && newData.child('author').isString() && newData.child('timestamp').isNumber()"
+      }  
+    }
+  }
+}
+```
+
 ## License
 
 - See [LICENSE](/LICENSE)
