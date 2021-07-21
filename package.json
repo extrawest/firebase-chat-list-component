@@ -1,6 +1,6 @@
 {
   "name": "@extrawest/firebase-chat-list-component",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React Firebase Chat List Component",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
@@ -58,8 +58,5 @@
   "homepage": "https://github.com/extrawest/firebase-chat-list-component#readme",
   "directories": {
     "lib": "lib"
-  },
-  "publishConfig": {
-   "@extrawest/firebase-chat-list-component:registry": "https://npm.pkg.github.com"
- }
+  }
 }
