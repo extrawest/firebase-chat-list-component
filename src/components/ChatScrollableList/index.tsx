@@ -5,7 +5,12 @@ import ChatBoxMessage from "../ChatBoxMessage";
 import { MessageProps, ScrollableListProps } from './../../interfaces';
 import firebase from "firebase/app";
 
-const ScrollableList: FC<ScrollableListProps> = ({ messages, style, ...props }) => {  
+const ScrollableList: FC<ScrollableListProps> = ({
+  currentAuthId,
+  messages,
+  style,
+  ...props
+}) => {
   const scrollToBottom = () => {
      animateScroll.scrollToBottom({
       containerId: "chat-message"
@@ -19,16 +24,21 @@ const ScrollableList: FC<ScrollableListProps> = ({ messages, style, ...props }) 
   }, [messages] );
 
   return (
-    <List id="chat-message" {...props} style={style}>
-      {messages && messages.map( ( snapshot: firebase.database.DataSnapshot, index: number ) => {
+    <List
+      id="chat-message"
+      {...props}
+      style={style}
+    >
+      {messages && messages.map((
+        snapshot: firebase.database.DataSnapshot,
+        index: number
+      ) => {
         const message: MessageProps = snapshot.val();
-
-        const type = message?.type;
-
+        const chatBoxClassName = message.author === currentAuthId ? "sent" : "received"
         return (
           <ListItem
             key={`${index}_${message.author}`}
-            className={`chatbox-${type.toLowerCase()}`}
+            className={`chatbox-${chatBoxClassName}`}
           >
             <ChatBoxMessage message={message} />
           </ListItem>

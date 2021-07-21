@@ -21,9 +21,11 @@ export interface ChatProps {
   loading?: boolean;
   handleSubmitMessage: (values: ValuesProps, form: FormApi<ValuesProps, Partial<ValuesProps>>) => void;
   messages: firebase.database.DataSnapshot[] | undefined;
+  currentAuthUid: string | undefined;
 }
 
 export interface ScrollableListProps {
+  currentAuthId: string | undefined;
   messages: firebase.database.DataSnapshot[] | undefined;
   style: any;
   className?: any;

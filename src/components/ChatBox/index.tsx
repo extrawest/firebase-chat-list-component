@@ -49,12 +49,12 @@ const useStyles = makeStyles((theme) => ({
     overflowY: "auto",
     margin: 0,
     padding: "20px 10px",
-    "& .tastt-MuiListItem-root": {
+    "& .MuiListItem-root": {
       position: "relative",
       display: "flex",
       flexWrap: "wrap",
       flexDirection: "column",
-      "&.chatbox-buyer": {
+      "&.chatbox-sent": {
         "& > .message-body": {
           borderTopRightRadius: 0,
           borderTopLeftRadius: 10,
@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
           borderBottomRightRadius: 10,
           backgroundColor: fade("#29C797", 0.12),
           marginLeft: "auto",
-          "& .tastt-MuiTypography-root": {
+          "& .MuiTypography-root": {
             wordBreak: "break-word"
           },
           "&:after": {
@@ -76,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
             borderWidth: "15px 15px 0 0",
             borderColor: `${fade(
               "#29C797",
-              0.12,
+              0.12
             )} transparent transparent transparent`,
           },
         },
@@ -84,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
           marginLeft: "auto",
         },
       },
-      "&.chatbox-delivery": {
+      "&.chatbox-received": {
         "& > .message-body": {
           borderTopLeftRadius: 0,
           borderTopRightRadius: 10,
@@ -92,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
           borderBottomRightRadius: 10,
           background: fade(theme.palette.grey[900], 0.06),
           marginRight: "auto",
-          "& .tastt-MuiTypography-root": {
+          "& .MuiTypography-root": {
             wordBreak: "break-word"
           },
           "&:before": {
@@ -143,12 +143,13 @@ const useStyles = makeStyles((theme) => ({
   sendMessageButton: {
     padding: 0,
     background: theme.palette.primary.main,
+    color: theme.palette.secondary.main,
     width: 36,
     height: 36,
   },
   chatFieldBox: {
     marginBottom: 0,
-    "& .tastt-MuiOutlinedInput-notchedOutline": {
+    "& .MuiOutlinedInput-notchedOutline": {
       border: "none",
     },
   },
@@ -174,7 +175,8 @@ const ChatBox: FC<ChatProps> = ({
   chatMessagePlaceholder,
   loading,
   handleSubmitMessage,
-  messages
+  messages,
+  currentAuthUid
 } ) => {
   
   const formActionsRef = useRef<any>( null );
@@ -221,7 +223,10 @@ const ChatBox: FC<ChatProps> = ({
   };
 
   const hanldeSubmitByKeyPress = ( event: React.KeyboardEvent ) => {
-    if ( (event.ctrlKey || event.metaKey) && (event.keyCode === 13 || event.keyCode === 10 ) ){
+    if (
+      (event.ctrlKey || event.metaKey) &&
+      (event.code === "13" || event.code === "10")
+    ) {
       handleSubmit();
     }
   };
@@ -245,6 +250,7 @@ const ChatBox: FC<ChatProps> = ({
         ) : (
           <ScrollableList
             messages={messages}
+            currentAuthId={currentAuthUid}
             className={classes.messageArea}
             style={style}
           />
