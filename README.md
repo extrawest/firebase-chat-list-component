@@ -56,7 +56,7 @@ Before using chat, you need to configure firebase application and rules for Real
 ```
 {
   "rules": {
-    "chats": {
+    "chat": {
       ".read": "auth != null",
       ".write": "auth != null",
       "$messageId": {
