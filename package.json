@@ -1,6 +1,6 @@
 {
   "name": "@extrawest/firebase-chat-list-component",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React Firebase Chat List Component",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
